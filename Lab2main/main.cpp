@@ -1,3 +1,7 @@
+
+
+// Сухих Матвей Б20-523.
+
 #include <iostream>
 #include <cmath>
 #include <math.h>
@@ -8,14 +12,14 @@
 
 int main() {
     double a, b, x;
-    std::cout << "Enter first axis of Ellipse (Should be more then second)" << std::endl;
+    std::cout << "Enter first axis of Ellipse (Should be more then second)" << std::endl; // Большая полуось
     if (!getNum(a))
         return -1;
-    if (a >= 0) {
-        std::cout << "Enter second axis of Ellipse" << std::endl;
+    if (a >= 0) { // Проверка, что первая больше 0
+        std::cout << "Enter second axis of Ellipse" << std::endl; // Меньшая полуось
         if (!getNum(b))
             return -1;
-        if (a < b)
+        if (a < b) // Проверка, что первая больше
             return -1;
         ellipse a1(a, b);
         std::cout << "Length = " << a1.focal_length() << std::endl;
