@@ -12,6 +12,7 @@
 #include "Ellipse.h"
 
 namespace Prog2 {
+
     double ellipse::focal_length() const { // return the focal length
         return sqrt(a * a - b * b);
     }
@@ -59,6 +60,9 @@ namespace Prog2 {
         if (A <= 0) {
             throw std::logic_error("Incorrect first axis");
         }
+        if (A < b) {
+            throw std::logic_error("Incorrect second axis");
+        }
         a = A;
         return *this;
     }
@@ -73,4 +77,5 @@ namespace Prog2 {
         b = B;
         return *this;
     }
+
 }
