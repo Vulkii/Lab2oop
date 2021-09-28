@@ -81,7 +81,7 @@ TEST(Constructor, CheckXandY) // Checing the Y.
 	ASSERT_EQ(2, a1.FindY(0));
 	ASSERT_EQ(1.6, a1.FindY(3));
 	ASSERT_EQ(1.2, a1.FindY(4));
-	ASSERT_EQ(-2, a1.FindY(5));
+	ASSERT_EQ(0, a1.FindY(5));
 	ASSERT_EQ(-2, a1.FindY(7));
 }
 
