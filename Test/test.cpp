@@ -11,14 +11,14 @@ int main(int argc, char* argv[]) {
 }
 
 
-TEST(Constructor, DefaultConstructor)
+TEST(Constructor, DefaultConstructor) // Checking one consturtor
 {
 	ellipse a1(3, 2);
 	ASSERT_EQ(3, a1.getFAxis());
 	ASSERT_EQ(2, a1.getSAxis());
 }
 
-TEST(Constructor, ThreeConstructors)
+TEST(Constructor, ThreeConstructors) // Checking multiple constructors
 {
 	ellipse a1(3, 2);
 	ASSERT_EQ(3, a1.getFAxis());
@@ -33,8 +33,9 @@ TEST(Constructor, ThreeConstructors)
 	ASSERT_EQ(24, a3.getSAxis());
 }
 
-TEST(Constructor, CheckOnErrors)
+TEST(Constructor, CheckOnErrors) // Checking consturctor with bad init values
 {
+	ASSERT_ANY_THROW(ellipse a1(0, 0));
 	ASSERT_ANY_THROW(ellipse a1(-1, 2));
 	ASSERT_ANY_THROW(ellipse a1(-1, -2));
 	ASSERT_ANY_THROW(ellipse a1(1, -2));
@@ -42,7 +43,7 @@ TEST(Constructor, CheckOnErrors)
 }
 
 
-TEST(setters, CheckOnErrors)
+TEST(setters, CheckOnErrors) // Checking normal setters work
 {
 	ellipse a1(1, 1);
 	ASSERT_ANY_THROW(a1.setFAxis(-1));
@@ -52,14 +53,14 @@ TEST(setters, CheckOnErrors)
 	ASSERT_ANY_THROW(a1.setSAxis(5));
 }
 
-TEST(Getters, CheckOnErrors)
+TEST(Getters, CheckOnErrors) // Checking normal getters work
 {
 	ellipse a1(1, 1);
 	ASSERT_EQ(1, a1.getFAxis());
 	ASSERT_EQ(1, a1.getSAxis());
 }
 
-TEST(Constructor, Check_with_numbers) // ѕроверка значений всех методов класса
+TEST(Constructor, Check_with_numbers) // Checking all methods
 {
     ellipse a1(5,3);
 	ASSERT_EQ(4, a1.focal_length());
@@ -71,7 +72,7 @@ TEST(Constructor, Check_with_numbers) // ѕроверка значений всех методов класса
 }
 
 
-TEST(Constructor, CheckXandY) // ѕроверка значений метода поиска Y.
+TEST(Constructor, CheckXandY) // Checing the Y.
 {
 	ellipse a1(5, 2);
 	ASSERT_EQ(2, a1.FindY(0));
