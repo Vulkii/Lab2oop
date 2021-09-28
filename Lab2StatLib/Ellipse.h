@@ -43,7 +43,7 @@ namespace Prog2 {
 
     class ellipse {
     private:
-        double a, b; // a, b - полуоси эллипса.
+        double a, b; // a, b - semi-axis of the Ellipse
     public:
 
         // constructors
