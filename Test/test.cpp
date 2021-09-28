@@ -3,10 +3,60 @@
 #include "pch.h"
 #include "C:\Users\Vulki\source\repos\StaticLib1\Ellipse.h"
 
+using namespace Prog2;
 
 int main(int argc, char* argv[]) {
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
+}
+
+
+TEST(Constructor, DefaultConstructor)
+{
+	ellipse a1(3, 2);
+	ASSERT_EQ(3, a1.getFAxis());
+	ASSERT_EQ(2, a1.getSAxis());
+}
+
+TEST(Constructor, ThreeConstructors)
+{
+	ellipse a1(3, 2);
+	ASSERT_EQ(3, a1.getFAxis());
+	ASSERT_EQ(2, a1.getSAxis());
+
+	ellipse a2(6, 3);
+	ASSERT_EQ(6, a2.getFAxis());
+	ASSERT_EQ(3, a2.getSAxis());
+
+	ellipse a3(77, 24);
+	ASSERT_EQ(77, a3.getFAxis());
+	ASSERT_EQ(24, a3.getSAxis());
+}
+
+TEST(Constructor, CheckOnErrors)
+{
+	ASSERT_ANY_THROW(ellipse a1(-1, 2));
+	ASSERT_ANY_THROW(ellipse a1(-1, -2));
+	ASSERT_ANY_THROW(ellipse a1(1, -2));
+	ASSERT_ANY_THROW(ellipse a1(3, 15));
+}
+
+
+TEST(setters, CheckOnErrors)
+{
+	ellipse a1(1, 1);
+	ASSERT_ANY_THROW(a1.setFAxis(-1));
+	ASSERT_ANY_THROW(a1.setSAxis(-1));
+	ASSERT_ANY_THROW(a1.setFAxis(0));
+	ASSERT_ANY_THROW(a1.setSAxis(0));
+	ASSERT_ANY_THROW(a1.setSAxis(5));
+}
+
+TEST(Getters, CheckOnErrors)
+{
+	ellipse a1(1, 1);
+	ASSERT_EQ(1, a1.getFAxis());
+	ASSERT_EQ(1, a1.getSAxis());
 }
 
 TEST(Constructor, Check_with_numbers) // ѕроверка значений всех методов класса
@@ -31,14 +81,3 @@ TEST(Constructor, CheckXandY) // ѕроверка значений метода поиска Y.
 	ASSERT_EQ(-2, a1.FindY(7));
 }
 
-
-TEST(Constructor, Check_0)
-{
-	ellipse a1(0, 0);
-	ASSERT_EQ(-1, a1.focal_length());
-	ASSERT_EQ(-1, a1.eccentricity());
-	ASSERT_EQ(-1, a1.length());
-	ASSERT_EQ(-1, a1.square());
-	ASSERT_EQ(-1, a1.perifocus());
-	ASSERT_EQ(-1, a1.apofocus());
-}

@@ -10,34 +10,39 @@
 #include <strstream>
 #include "C:\Users\Vulki\source\repos\StaticLib1\Ellipse.h"
 
-int main() {
-    double a, b, x;
-    std::cout << "Enter first axis of Ellipse (Should be more then second)" << std::endl; // Большая полуось
-    if (!getNum(a))
-        return -1;
-    if (a > 0) { // Проверка, что первая больше 0
-        std::cout << "Enter second axis of Ellipse" << std::endl; // Меньшая полуось
-        if (!getNum(b))
-            return -1;
-        if (a < b) // Проверка, что первая больше
-            return -1;
-        ellipse a1(a, b);
-        std::cout << "Length = " << a1.focal_length() << std::endl;
-        std::cout << "Eccentricity = " << a1.eccentricity() << std::endl;
-        std::cout << "Length = " << a1.length() << std::endl;
-        std::cout << "Square = " << a1.square() << std::endl;
-        std::cout << "Perifocus = " << a1.perifocus() << std::endl;
-        std::cout << "Apofocus = " << a1.apofocus() << std::endl;
-        std::cout << "Enter X lower then first axis" << std::endl;
-        if (!getNum(x))
-            return -1;
-        if (x <= a)
-            std::cout << "Y = " << a1.FindY(x) << std::endl;
-        else return -1;
+using namespace Prog2;
 
+    int main() {
+        double fa, sa, x;
+        std::cout << "Enter first axis of Ellipse (Should be more then second)" << std::endl; // Большая полуось
+        if (!getNum(fa))
+            return -1;
+        if (fa > 0) { // Проверка, что первая больше 0
+            std::cout << "Enter second axis of Ellipse" << std::endl; // Меньшая полуось
+            if (!getNum(sa))
+                return -1;
+            if (fa < sa) // Проверка, что первая больше
+                return -1;
+            ellipse a1(1, 1);
+            a1.setFAxis(fa);
+            a1.setSAxis(sa);
+            std::cout << "Length = " << a1.focal_length() << std::endl;
+            std::cout << "Eccentricity = " << a1.eccentricity() << std::endl;
+            std::cout << "Length = " << a1.length() << std::endl;
+            std::cout << "Square = " << a1.square() << std::endl;
+            std::cout << "Perifocus = " << a1.perifocus() << std::endl;
+            std::cout << "Apofocus = " << a1.apofocus() << std::endl;
+            std::cout << "Enter X lower then first axis" << std::endl;
+            if (!getNum(x))
+                return -1;
+            if (x <= fa)
+                std::cout << "Y = " << a1.FindY(x) << std::endl;
+            else return -1;
+
+        }
+        else {
+            std::cout << "Bad first axis" << std::endl;
+            return -1;
+        }
     }
-    else {
-        std::cout << "Bad first axis" << std::endl;
-        return -1;
-    }
-}
+
