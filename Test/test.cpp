@@ -51,6 +51,9 @@ TEST(setters, CheckOnErrors) // Checking normal setters work
 	ASSERT_ANY_THROW(a1.setFAxis(0));
 	ASSERT_ANY_THROW(a1.setSAxis(0));
 	ASSERT_ANY_THROW(a1.setSAxis(5));
+
+	ellipse a2(5, 2);
+	ASSERT_ANY_THROW(a2.setFAxis(1));
 }
 
 TEST(Getters, CheckOnErrors) // Checking normal getters work
