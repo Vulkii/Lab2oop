@@ -1,6 +1,6 @@
 #pragma once
 
-// Сухих Матвей Б20-523.
+// Sukhikh Matvei B20-523
 
 #ifndef ellipse_h
 #define ellipse_h

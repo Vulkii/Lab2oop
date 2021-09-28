@@ -1,4 +1,4 @@
-// Сухих Матвей Б20-523.
+// Sukhikh Matvei B20-523
 
 #include "pch.h"
 #include "C:\Users\Vulki\source\repos\StaticLib1\Ellipse.h"

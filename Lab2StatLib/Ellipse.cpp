@@ -1,5 +1,5 @@
 
-// Сухих Матвей Б20-523.
+// Sukhikh Matvei B20-523
 
 #define _USE_MATH_DEFINES
 

@@ -1,6 +1,7 @@
 
 
-// Сухих Матвей Б20-523.
+// Sukhikh Matvei B20-523
+
 
 #include <iostream>
 #include <cmath>
@@ -14,14 +15,14 @@ using namespace Prog2;
 
     int main() {
         double fa, sa, x;
-        std::cout << "Enter first axis of Ellipse (Should be more then second)" << std::endl; // Большая полуось
+        std::cout << "Enter first axis of Ellipse (Should be more then second)" << std::endl; // Big axis
         if (!getNum(fa))
             return -1;
-        if (fa > 0) { // Проверка, что первая больше 0
-            std::cout << "Enter second axis of Ellipse" << std::endl; // Меньшая полуось
+        if (fa > 0) { // Check that first axis > 0
+            std::cout << "Enter second axis of Ellipse" << std::endl; // Small axis
             if (!getNum(sa))
                 return -1;
-            if (fa < sa) // Проверка, что первая больше
+            if (fa < sa) // Check that first axis bigger than second axis
                 return -1;
             ellipse a1(1, 1);
             a1.setFAxis(fa);
