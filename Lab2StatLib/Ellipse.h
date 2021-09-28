@@ -1,6 +1,6 @@
 #pragma once
 
-
+// Сухих Матвей Б20-523.
 
 #ifndef ellipse_h
 #define ellipse_h
@@ -33,6 +33,8 @@ public:
     double length() const;
     double square() const;
     double FindY(double x) const;
+    double perifocus() const;
+    double apofocus() const;
     ~ellipse(){
             std::cout << "Destructor called for Ellipse " << std::endl;
     }

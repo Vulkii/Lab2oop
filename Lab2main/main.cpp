@@ -15,7 +15,7 @@ int main() {
     std::cout << "Enter first axis of Ellipse (Should be more then second)" << std::endl; // Большая полуось
     if (!getNum(a))
         return -1;
-    if (a >= 0) { // Проверка, что первая больше 0
+    if (a > 0) { // Проверка, что первая больше 0
         std::cout << "Enter second axis of Ellipse" << std::endl; // Меньшая полуось
         if (!getNum(b))
             return -1;
@@ -26,7 +26,9 @@ int main() {
         std::cout << "Eccentricity = " << a1.eccentricity() << std::endl;
         std::cout << "Length = " << a1.length() << std::endl;
         std::cout << "Square = " << a1.square() << std::endl;
-        std::cout << "Enter X lower then a" << std::endl;
+        std::cout << "Perifocus = " << a1.perifocus() << std::endl;
+        std::cout << "Apofocus = " << a1.apofocus() << std::endl;
+        std::cout << "Enter X lower then first axis" << std::endl;
         if (!getNum(x))
             return -1;
         if (x <= a)
